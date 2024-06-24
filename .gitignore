@@ -1,0 +1,7 @@
+/imgread.exe
+/resdet.exe
+/stat.exe
+/config.mak
+*.o
+*.a
+*.pc
