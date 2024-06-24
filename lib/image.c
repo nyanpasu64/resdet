@@ -61,12 +61,16 @@ RDError resdet_read_image(const char* filename, const char* mimetype, float** im
 		extern struct image_reader resdet_image_reader_libjpeg;
 		reader = &resdet_image_reader_libjpeg;
 	}
+#else
+#error HAVE_LIBJPEG
 #endif
 #ifdef HAVE_LIBPNG
 	else if(!strcmp(c,"image/png")) {
 		extern struct image_reader resdet_image_reader_libpng;
 		reader = &resdet_image_reader_libpng;
 	}
+#else
+#error HAVE_LIBPNG
 #endif
 #ifdef HAVE_MJPEGTOOLS
 	else if(!strcmp(c,"video/yuv4mpeg")) {
